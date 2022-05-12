@@ -4,6 +4,8 @@ All notable changes to the "condor-submit-file" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [1.0.0] - 2021-05-12
 
-- Initial release
+### Added
+
+-   Syntax highlighting.
