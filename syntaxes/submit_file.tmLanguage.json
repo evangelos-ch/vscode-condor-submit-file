@@ -1,0 +1,75 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "HTCondor submit_file",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        },
+        { "include": "#env-vars" },
+        { "include": "#numbers" },
+        { "include": "#bool" }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.submit_file",
+                    "match": "\\b(queue|in)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.submit_file",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.submit_file",
+                            "match": "\\\\."
+                        },
+                        {
+                            "name": "string.interpolated",
+                            "match": "((\\$([\\w]+?)?)\\((.+?)\\))",
+                            "captures": {
+                                "1": { "name": "punctuation.section.embedded.submit_file" },
+                                "4": { "name": "variable.name.submit_file" }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.submit_file",
+                    "match": "((#).*$)"
+                }
+            ]
+        },
+        "env-vars": {
+            "match": "((\\$([\\w]+?)?)\\((.+?)\\))",
+            "captures": {
+                "1": { "name": "variable.language" },
+                "4": { "name": "variable.name.submit_file" }
+            }
+        },
+        "bool": {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.submit_file"
+        },
+        "numbers": {
+            "match": "\\b([0-9]+\\.?([0-9]+)?(G|M)?)\\b",
+            "name": "constant.numeric.submit_file"
+        }
+    },
+    "scopeName": "source.submit_file"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "condor-submit-file",
+    "displayName": "HTCondor Submit File",
+    "description": "Syntax Highlighting for HTCondor's submit_file format.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "submit_file",
+            "aliases": ["HTCondor submit_file", "submit_file"],
+            "extensions": [".submit_file"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "submit_file",
+            "scopeName": "source.submit_file",
+            "path": "./syntaxes/submit_file.tmLanguage.json"
+        }]
+    }
+}
