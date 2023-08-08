@@ -1,4 +1,8 @@
-# condor-submit-file README
+# This extension is deprecated by [the official Htcondor extension](https://marketplace.visualstudio.com/items?itemName=htcondor.htcondor), please use that one instead!
+
+---
+
+# condor-submit-file
 
 HTCondor submit_file syntax highlighting for Visual Studio Code.
 
